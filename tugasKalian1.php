@@ -5,7 +5,7 @@
  
  
  
- 			echo "Siti HUmaira Ahfa<br>";
+ 			echo "Tugas Kalian PHP<br>";
  			echo "Xi RPL2 <br>";
  			
  			
