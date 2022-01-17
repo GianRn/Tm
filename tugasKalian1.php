@@ -41,7 +41,7 @@
  		
  		$luas = $lebar * $panjang;
  		
- 		echo "Jadi luanya adalah : $luas <br><br>"
+ 		echo "Jadi luanya adalah : $luas <br><br>";
  		
  		
  	}
@@ -61,7 +61,7 @@
  		
  		$luas = $lebar * $tinggi * $panjang;
  		
- 		echo "volumenya adalah : $luas <br><br>"
+ 		echo "volumenya adalah : $luas <br><br>";
  		
  		
  	}
