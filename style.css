@@ -1,3 +1,6 @@
+#foto{
+ box-shadow : 0 0 12px black;
+ border-radius : 20px;
 html {
   box-sizing: border-box;
 }
