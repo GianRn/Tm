@@ -11,17 +11,37 @@
     />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
     <link rel="stylesheet" href="style.css" />
+ <style type="text/css" media="all">
+   	
+            button{
+            	width: 100px;
+            	height: 50px;
+            	font-weight: bold;
+            	background: #BAABDA;
+            	color: black;
+            	font-size: 6em;
+            	font-family: 'Moon Dance', cursive;
+            	position: relative;
+            	border: none;
+            	margin: auto;
+            	font-size: 20px;
+            	font-family: arial;
+            	border-radius: 20px;
+            }			
+			
+   </style>
   </head>
 
   <body>
     <!-- Bagian Konten -->
     
 <!-- Musik -->
-<audio
-  autoplay="true"
-  loop
-  src="https://res.cloudinary.com/dlr8gie0d/video/upload/v1617498637/hbd_lrzzzr.mp3"
-></audio>
+<button class="btn btn-primary" onclick="toggleMusic()" id="btn-playback" data-play="false">
+    <i class="fa fa-play"></i>
+    <span id="btn-text">PLAY</span>
+  </button>
+  <audio id="audio" src="https://res.cloudinary.com/dlr8gie0d/video/upload/v1617498637/hbd_lrzzzr.mp3" />
+ 
 <div class="container">
   <div class="one">
     <h1 class="one">
@@ -146,6 +166,40 @@
     
 
     <!-- Javascript-->
+<script type="text/javascript" charset="utf-8">
+     	
+     
+    const myAudio = document.getElementById("audio");
+    const btn = document.getElementById("btn-playback");
+    const btnIcon = document.querySelector("#btn-playback > i");
+    const btnText = document.getElementById("btn-text");
+    
+    const toggleMusic = () => {      
+      const dataPlay = btn.getAttribute('data-play');
+            
+      if(dataPlay === 'false') {
+        btn.setAttribute('data-play', 'true');
+        myAudio.play();
+        btnIcon.classList.remove("fa-play");
+        btnIcon.classList.add("fa-pause");
+        btnText.innerText = "PAUSE";
+      } else {
+        btn.setAttribute('data-play', 'false');
+        myAudio.pause();
+        btnIcon.classList.remove("fa-pause");
+        btnIcon.classList.add("fa-play");
+        btnText.innerText = "PLAY";
+      }
+    };
+    
+    myAudio.onpause = () => {
+      btn.setAttribute('data-play', 'false');
+        myAudio.pause();
+        btnIcon.classList.remove("fa-pause");
+        btnIcon.classList.add("fa-play");
+        btnText.innerText = "PLAY";
+    };
+  </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="application/javascript" src="script.js"></script>
   </body>
